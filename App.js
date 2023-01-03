@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react';
-import { StyleSheet, Text, View, Image, Button } from 'react-native-web';
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
 
 export default function App() {
 
@@ -23,11 +23,11 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Text>{myMemes}</Text>
       <Button onPress={fetchMemes} title="Get Meme"></Button>
+      <Text>{myMemes}</Text>
 
           {img ? (
-            <Image source={{ uri: img }} style={{height: 1600, width:1600,transform:[{scale:0.5}]}} />
+            <Image source={{ uri: img }} style={{height: "70%", width:"100%",marginTop:100,marginLeft:5,transform:[{scale:0.5}]}} />
           ) : (
             <></>
           )}
@@ -35,3 +35,13 @@ export default function App() {
     </View>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: '#fff',
+    width:"100%",
+    height:400,
+    marginTop: 100,
+  }
+});
